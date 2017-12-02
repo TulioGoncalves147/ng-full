@@ -2,8 +2,10 @@ import * as express from 'express';
 
 import CatCtrl from './controllers/cat';
 import PaisCtrl from './controllers/pais';
+import EstadoCtrl from './controllers/estado';
 import UserCtrl from './controllers/user';
 import Cat from './models/cat';
+import Estado from './models/estado';
 import Pais from './models/pais';
 import User from './models/user';
 
@@ -12,6 +14,7 @@ export default function setRoutes(app) {
   const router = express.Router();
 
   const catCtrl = new CatCtrl();
+  const estadoCtrl = new EstadoCtrl();
   const paisCtrl = new PaisCtrl();
   const userCtrl = new UserCtrl();
 
@@ -22,6 +25,22 @@ export default function setRoutes(app) {
   router.route('/cat/:id').get(catCtrl.get);
   router.route('/cat/:id').put(catCtrl.update);
   router.route('/cat/:id').delete(catCtrl.delete);
+
+  /*// Cidades
+  router.route('/cidades').get(cidadeCtrl.getAll);
+  router.route('/cidades/count').get(cidadeCtrl.count);
+  router.route('/cidade').post(cidadeCtrl.insert);
+  router.route('/cidade/:id').get(cidadeCtrl.get);
+  router.route('/cidade/:id').put(cidadeCtrl.update);
+  router.route('/cidade/:id').delete(cidadeCtrl.delete);
+  */
+  // Estados
+  router.route('/estados').get(estadoCtrl.getAll);
+  router.route('/estados/count').get(estadoCtrl.count);
+  router.route('/estado').post(estadoCtrl.insert);
+  router.route('/estado/:id').get(estadoCtrl.get);
+  router.route('/estado/:id').put(estadoCtrl.update);
+  router.route('/estado/:id').delete(estadoCtrl.delete);
 
   // Paises
   router.route('/paises').get(paisCtrl.getAll);

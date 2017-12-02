@@ -3,7 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Account settings</h4>
+  <h4 class="card-header">Configurações de conta</h4>
   <div class="card-block">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
       <div class="input-group">
@@ -17,7 +17,7 @@
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
         <select class="form-control" name="role" [(ngModel)]="user.role">
-          <option value="" disabled>Role</option>
+          <option value="" disabled>Funções</option>
           <option value="user">User</option>
           <option value="admin">Admin</option>
         </select>

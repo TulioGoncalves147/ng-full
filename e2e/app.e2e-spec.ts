@@ -11,7 +11,9 @@ describe('angular2-full-stack App', () => {
     page.navigateTo();
     expect(page.getNavbarElement(0)).toEqual('Home');
     expect(page.getNavbarElement(1)).toEqual('Cats');
-    expect(page.getNavbarElement(1)).toEqual('Paises');
+    expect(page.getNavbarElement(4)).toEqual('Paises');
+    expect(page.getNavbarElement(5)).toEqual('Estados');
+    //expect(page.getNavbarElement(6)).toEqual('Cidades');
     expect(page.getNavbarElement(2)).toEqual('Login');
     expect(page.getNavbarElement(3)).toEqual('Register');
   });

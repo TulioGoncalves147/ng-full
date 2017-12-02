@@ -4,6 +4,7 @@ import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
 import { PaisService } from './services/pais.service';
+import { EstadoService } from './services/estado.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -11,6 +12,7 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { PaisesComponent } from './paises/paises.component';
+import { EstadosComponent } from './estados/estados.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -19,11 +21,13 @@ import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     CatsComponent,
     PaisesComponent,
+    EstadosComponent,
     AboutComponent,
     RegisterComponent,
     LoginComponent,
@@ -42,6 +46,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AuthGuardAdmin,
     CatService,
     PaisService,
+    EstadoService,
     UserService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

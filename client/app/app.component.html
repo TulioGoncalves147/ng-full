@@ -1,5 +1,4 @@
 <div class="container">
-
   <nav class="navbar navbar-dark bg-success">
     <div class="nav navbar-nav">
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
@@ -11,11 +10,17 @@
       <a routerLink="/paises" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-list"></i> Paises
       </a>
+      <a routerLink="/estados" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-list"></i> Estados
+      </a>
+      <a routerLink="/cidades" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-list"></i> Cidades
+      </a>
       <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
         <i class="fa fa-sign-in"></i> Login
       </a>
       <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-        <i class="fa fa-user-plus"></i> Register
+        <i class="fa fa-user-plus"></i> Registrar
       </a>
       <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
         <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})

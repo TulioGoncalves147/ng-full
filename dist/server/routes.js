@@ -3,10 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var cat_1 = require("./controllers/cat");
 var pais_1 = require("./controllers/pais");
+var estado_1 = require("./controllers/estado");
 var user_1 = require("./controllers/user");
 function setRoutes(app) {
     var router = express.Router();
     var catCtrl = new cat_1.default();
+    var estadoCtrl = new estado_1.default();
     var paisCtrl = new pais_1.default();
     var userCtrl = new user_1.default();
     // Cats
@@ -16,6 +18,21 @@ function setRoutes(app) {
     router.route('/cat/:id').get(catCtrl.get);
     router.route('/cat/:id').put(catCtrl.update);
     router.route('/cat/:id').delete(catCtrl.delete);
+    /*// Cidades
+    router.route('/cidades').get(cidadeCtrl.getAll);
+    router.route('/cidades/count').get(cidadeCtrl.count);
+    router.route('/cidade').post(cidadeCtrl.insert);
+    router.route('/cidade/:id').get(cidadeCtrl.get);
+    router.route('/cidade/:id').put(cidadeCtrl.update);
+    router.route('/cidade/:id').delete(cidadeCtrl.delete);
+    */
+    // Estados
+    router.route('/estados').get(estadoCtrl.getAll);
+    router.route('/estados/count').get(estadoCtrl.count);
+    router.route('/estado').post(estadoCtrl.insert);
+    router.route('/estado/:id').get(estadoCtrl.get);
+    router.route('/estado/:id').put(estadoCtrl.update);
+    router.route('/estado/:id').delete(estadoCtrl.delete);
     // Paises
     router.route('/paises').get(paisCtrl.getAll);
     router.route('/paises/count').get(paisCtrl.count);
