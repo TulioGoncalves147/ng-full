@@ -1,12 +1,15 @@
 <div class="container">
 
-  <nav class="navbar navbar-dark bg-primary">
+  <nav class="navbar navbar-dark bg-success">
     <div class="nav navbar-nav">
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-home"></i> Home
       </a>
       <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-list"></i> Cats
+      </a>
+      <a routerLink="/paises" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-list"></i> Paises
       </a>
       <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
         <i class="fa fa-sign-in"></i> Login
