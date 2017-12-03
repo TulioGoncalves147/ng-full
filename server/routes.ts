@@ -6,9 +6,9 @@ import EstadoCtrl from './controllers/estado';
 import CidadeCtrl from './controllers/cidade';
 import UserCtrl from './controllers/user';
 import Cat from './models/cat';
-import Cidade from './models/cidade';
-import Estado from './models/estado';
 import Pais from './models/pais';
+import Estado from './models/estado';
+import Cidade from './models/cidade';
 import User from './models/user';
 
 export default function setRoutes(app) {
@@ -16,8 +16,8 @@ export default function setRoutes(app) {
   const router = express.Router();
 
   const catCtrl = new CatCtrl();
-  const estadoCtrl = new EstadoCtrl();
   const paisCtrl = new PaisCtrl();
+  const estadoCtrl = new EstadoCtrl();
   const cidadeCtrl = new CidadeCtrl();
   const userCtrl = new UserCtrl();
 

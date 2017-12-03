@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { PaisesComponent } from './paises/paises.component';
 import { EstadosComponent } from './estados/estados.component';
+import { CidadesComponent } from './cidades/cidades.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'cats', component: CatsComponent },
   { path: 'paises', component: PaisesComponent },
   { path: 'estados', component: EstadosComponent },
+  { path: 'cidades', component: CidadesComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
