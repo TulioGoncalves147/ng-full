@@ -9,9 +9,9 @@ var user_1 = require("./controllers/user");
 function setRoutes(app) {
     var router = express.Router();
     var catCtrl = new cat_1.default();
+    var paisCtrl = new pais_1.default();
     var estadoCtrl = new estado_1.default();
     var cidadeCtrl = new cidade_1.default();
-    var paisCtrl = new pais_1.default();
     var userCtrl = new user_1.default();
     // Cats
     router.route('/cats').get(catCtrl.getAll);

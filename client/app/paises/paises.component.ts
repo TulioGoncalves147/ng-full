@@ -46,7 +46,7 @@ export class PaisesComponent implements OnInit {
         const newPais = res.json();
         this.paises.push(newPais);
         this.addPaisForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
+        this.toast.setMessage('item adicionado com sucesso.', 'success');
       },
       error => console.log(error)
     );
@@ -60,7 +60,7 @@ export class PaisesComponent implements OnInit {
   cancelEditing() {
     this.isEditing = false;
     this.pais = {};
-    this.toast.setMessage('item editing cancelled.', 'warning');
+    this.toast.setMessage('edição de item cancelada.', 'warning');
     // reload the paises to reset the editing
     this.getPaises();
   }
@@ -70,19 +70,19 @@ export class PaisesComponent implements OnInit {
       res => {
         this.isEditing = false;
         this.pais = pais;
-        this.toast.setMessage('item edited successfully.', 'success');
+        this.toast.setMessage('item editado com sucesso', 'success');
       },
       error => console.log(error)
     );
   }
 
   deletePais(pais) {
-    if (window.confirm('Are you sure you want to permanently delete this item?')) {
+    if (window.confirm('Tem certeza de que deseja excluir este item permanentemente?')) {
       this.paisService.deletePais(pais).subscribe(
         res => {
           const pos = this.paises.map(elem => elem._id).indexOf(pais._id);
           this.paises.splice(pos, 1);
-          this.toast.setMessage('item deleted successfully.', 'success');
+          this.toast.setMessage('item excluído com sucesso.', 'success');
         },
         error => console.log(error)
       );

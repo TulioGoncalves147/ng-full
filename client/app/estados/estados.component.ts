@@ -48,7 +48,7 @@ export class EstadosComponent implements OnInit {
         const newEstado = res.json();
         this.estados.push(newEstado);
         this.addEstadoForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
+        this.toast.setMessage('item adicionado com sucesso.', 'success');
       },
       error => console.log(error)
     );
@@ -62,7 +62,7 @@ export class EstadosComponent implements OnInit {
   cancelEditing() {
     this.isEditing = false;
     this.estado = {};
-    this.toast.setMessage('item editing cancelled.', 'warning');
+    this.toast.setMessage('edição de item cancelada.', 'warning');
     // reload the estadoos to reset the editing
     this.getEstados();
   }
@@ -72,19 +72,19 @@ export class EstadosComponent implements OnInit {
       res => {
         this.isEditing = false;
         this.estado = estado;
-        this.toast.setMessage('item edited successfully.', 'success');
+        this.toast.setMessage('item editado com sucesso.', 'success');
       },
       error => console.log(error)
     );
   }
 
   deleteEstado(estado) {
-    if (window.confirm('Are you sure you want to permanently delete this item?')) {
+    if (window.confirm('Tem certeza de que deseja excluir este item permanentemente?')) {
       this.estadoService.deleteEstado(estado).subscribe(
         res => {
           const pos = this.estados.map(elem => elem._id).indexOf(estado._id);
           this.estados.splice(pos, 1);
-          this.toast.setMessage('item deleted successfully.', 'success');
+          this.toast.setMessage('item excluído com sucesso.', 'success');
         },
         error => console.log(error)
       );

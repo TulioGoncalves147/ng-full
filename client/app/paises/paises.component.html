@@ -3,19 +3,19 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Current paises ({{paises.length}})</h4>
+  <h4 class="card-header">Países cadastrados ({{paises.length}})</h4>
   <div class="card-block">
     <table class="table table-bordered table-striped">
       <thead class="thead-default">
         <tr>
-          <th>Name</th>
+          <th>Nome</th>
           <th>Cod. BACEN</th>
-          <th>Actions</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody *ngIf="paises.length === 0">
         <tr>
-          <td colspan="4">There are no paises in the DB. Add a new pais below.</td>
+          <td colspan="4">Não há paises no banco de dados. Adicione um novo pais abaixo.</td>
         </tr>  
       </tbody>
       <tbody *ngIf="!isEditing">
@@ -23,8 +23,8 @@
           <td>{{pais.name}}</td>
           <td>{{pais.codBACEN}}</td>
           <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(pais)"><i class="fa fa-pencil"></i> Edit</button> 
-            <button class="btn btn-sm btn-danger" (click)="deletePais(pais)"><i class="fa fa-trash"></i> Delete</button>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(pais)"><i class="fa fa-pencil"></i> Editar</button> 
+            <button class="btn btn-sm btn-danger" (click)="deletePais(pais)"><i class="fa fa-trash"></i> Deletar</button>
           </td>
         </tr>  
       </tbody>
@@ -33,14 +33,14 @@
           <td colspan="4">
             <form class="form-inline" #form="ngForm" (ngSubmit)="editPais(pais)" style="display:inline">
               <div class="form-group">
-                <input class="form-control" type="text" name="name" [(ngModel)]="pais.name" placeholder="Name" required>
+                <input class="form-control" type="text" name="name" [(ngModel)]="pais.name" placeholder="Nome" required>
               </div>
               <div class="form-group">
                 <input class="form-control" type="number" name="codBACEN" [(ngModel)]="pais.codBACEN" placeholder="CodBACEN" min="0" required>
               </div>
-              <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
+              <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Salvar</button>
             </form>
-            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
+            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancelar</button>
           </td>
         </tr>
       </tbody>
@@ -49,16 +49,16 @@
 </div>
 
 <div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Add new pais</h4>
+  <h4 class="card-header">Adicionar novo país</h4>
   <div class="card-block">
     <form class="form-inline" [formGroup]="addPaisForm" (ngSubmit)="addPais()" style="text-align:center">
       <div class="form-group">
-        <input class="form-control" type="text" name="name" formControlName="name" placeholder="Name">
+        <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nome">
       </div>
       <div class="form-group">
-        <input class="form-control" type="number" name="codBACEN" formControlName="codBACEN" placeholder="CodBACEN" min="0">
+        <input class="form-control" type="number" name="codBACEN" formControlName="codBACEN" placeholder="Cod. BACEN" min="0">
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!addPaisForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!addPaisForm.valid"><i class="fa fa-floppy-o"></i> Adicionar</button>
     </form>
   </div>
 </div>

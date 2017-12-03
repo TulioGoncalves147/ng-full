@@ -33,10 +33,10 @@
           <td colspan="4">
             <form class="form-inline" #form="ngForm" (ngSubmit)="editCidade(cidade)" style="display:inline">
               <div class="form-group">
-                <input class="form-control" type="text" name="name" [(ngModel)]="cidade.name" placeholder="Name" required>
+                <input class="form-control" type="text" name="name" [(ngModel)]="cidade.name" placeholder="Nome" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="number" name="codIBGE" [(ngModel)]="cidade.codIBGE" placeholder="CodIBGE" min="0" required>
+                <input class="form-control" type="number" name="codIBGE" [(ngModel)]="cidade.codIBGE" placeholder="Cod. IBGE" min="0" required>
               </div>
               <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Salvar</button>
             </form>
@@ -53,10 +53,10 @@
   <div class="card-block">
     <form class="form-inline" [formGroup]="addCidadeForm" (ngSubmit)="addCidade()" style="text-align:center">
       <div class="form-group">
-        <input class="form-control" type="text" name="name" formControlName="name" placeholder="Name">
+        <input class="form-control" type="text" name="name" formControlName="name" placeholder="Nome">
       </div>
       <div class="form-group">
-        <input class="form-control" type="number" name="codIBGE" formControlName="codIBGE" placeholder="CodIBGE" min="0">
+        <input class="form-control" type="number" name="codIBGE" formControlName="codIBGE" placeholder="Cod. IBGE" min="0">
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!addCidadeForm.valid"><i class="fa fa-floppy-o"></i> Adicionar</button>
     </form>

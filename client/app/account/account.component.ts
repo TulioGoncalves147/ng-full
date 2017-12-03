@@ -30,7 +30,7 @@ export class AccountComponent implements OnInit {
 
   save(user) {
     this.userService.editUser(user).subscribe(
-      res => this.toast.setMessage('account settings saved!', 'success'),
+      res => this.toast.setMessage('Configurações de conta salvas!', 'success'),
       error => console.log(error)
     );
   }

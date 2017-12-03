@@ -48,7 +48,7 @@ export class CatsComponent implements OnInit {
         const newCat = res.json();
         this.cats.push(newCat);
         this.addCatForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
+        this.toast.setMessage('item adicionado com sucesso.', 'success');
       },
       error => console.log(error)
     );
@@ -62,7 +62,7 @@ export class CatsComponent implements OnInit {
   cancelEditing() {
     this.isEditing = false;
     this.cat = {};
-    this.toast.setMessage('item editing cancelled.', 'warning');
+    this.toast.setMessage('edição de item cancelada.', 'warning');
     // reload the cats to reset the editing
     this.getCats();
   }
@@ -72,19 +72,19 @@ export class CatsComponent implements OnInit {
       res => {
         this.isEditing = false;
         this.cat = cat;
-        this.toast.setMessage('item edited successfully.', 'success');
+        this.toast.setMessage('item editado com sucesso.', 'success');
       },
       error => console.log(error)
     );
   }
 
   deleteCat(cat) {
-    if (window.confirm('Are you sure you want to permanently delete this item?')) {
+    if (window.confirm('Tem certeza de que deseja excluir este item permanentemente?')) {
       this.catService.deleteCat(cat).subscribe(
         res => {
           const pos = this.cats.map(elem => elem._id).indexOf(cat._id);
           this.cats.splice(pos, 1);
-          this.toast.setMessage('item deleted successfully.', 'success');
+          this.toast.setMessage('item excluído com sucesso.', 'success');
         },
         error => console.log(error)
       );

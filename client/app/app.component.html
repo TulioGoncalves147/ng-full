@@ -4,33 +4,36 @@
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-home"></i> Home
       </a>
-      <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
-        <i class="fa fa-list"></i> Cats
+      <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-user-plus"></i> Registrar
       </a>
       <a routerLink="/paises" class="nav-item nav-link" routerLinkActive="active">
-        <i class="fa fa-list"></i> Paises
+        <i class="fa fa-globe"></i> Paises
       </a>
       <a routerLink="/estados" class="nav-item nav-link" routerLinkActive="active">
-        <i class="fa fa-list"></i> Estados
+        <i class="fa fa-globe"></i> Estados
       </a>
       <a routerLink="/cidades" class="nav-item nav-link" routerLinkActive="active">
-        <i class="fa fa-list"></i> Cidades
+        <i class="fa fa-globe"></i> Cidades
+      </a>
+      <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
+        <i class="fa fa-vcard"></i> Clientes
       </a>
       <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
         <i class="fa fa-sign-in"></i> Login
       </a>
-      <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-        <i class="fa fa-user-plus"></i> Registrar
-      </a>
-      <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-        <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
-      </a>
-      <a routerLink="/admin" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
-        <i class="fa fa-lock"></i> Admin
-      </a>
-      <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-        <i class="fa fa-sign-out"></i> Logout
-      </a>
+
+      <div class="btn-group" *ngIf="auth.loggedIn">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" routerLinkActive="active" *ngIf="auth.loggedIn">
+          Account ({{auth.currentUser.username}})
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a routerLink="/account" class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn"><i class="fa fa-cog"></i> Configuração da conta</a>
+          <a routerLink="/admin" class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin" ><i class="fa fa-users"></i> Contas cadastradas(adm)</a>
+          <a routerLink="/logout"  class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn"><i class="fa fa-sign-out"></i> Logout</a>
+        </div>
+      </div>
+
     </div>
   </nav>
   

@@ -1,11 +1,11 @@
-import * as mongoose from 'mongoose';
-
-const cidadeSchema = new mongoose.Schema({
-  name: String,
-  codIBGE: Number
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var mongoose = require("mongoose");
+var cidadeSchema = new mongoose.Schema({
+    name: String,
+    // weight: Number,
+    codIBGE: Number
 });
-
-const Cidade = mongoose.model('Cidade', cidadeSchema);
-
-export default Cidade;
+var Cidade = mongoose.model('Cidade', cidadeSchema);
+exports.default = Cidade;
 //# sourceMappingURL=cidade.js.map
