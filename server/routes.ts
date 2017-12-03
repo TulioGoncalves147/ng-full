@@ -3,8 +3,10 @@ import * as express from 'express';
 import CatCtrl from './controllers/cat';
 import PaisCtrl from './controllers/pais';
 import EstadoCtrl from './controllers/estado';
+import CidadeCtrl from './controllers/cidade';
 import UserCtrl from './controllers/user';
 import Cat from './models/cat';
+import Cidade from './models/cidade';
 import Estado from './models/estado';
 import Pais from './models/pais';
 import User from './models/user';
@@ -16,6 +18,7 @@ export default function setRoutes(app) {
   const catCtrl = new CatCtrl();
   const estadoCtrl = new EstadoCtrl();
   const paisCtrl = new PaisCtrl();
+  const cidadeCtrl = new CidadeCtrl();
   const userCtrl = new UserCtrl();
 
   // Cats
@@ -26,14 +29,14 @@ export default function setRoutes(app) {
   router.route('/cat/:id').put(catCtrl.update);
   router.route('/cat/:id').delete(catCtrl.delete);
 
-  /*// Cidades
+  // Cidades
   router.route('/cidades').get(cidadeCtrl.getAll);
   router.route('/cidades/count').get(cidadeCtrl.count);
   router.route('/cidade').post(cidadeCtrl.insert);
   router.route('/cidade/:id').get(cidadeCtrl.get);
   router.route('/cidade/:id').put(cidadeCtrl.update);
   router.route('/cidade/:id').delete(cidadeCtrl.delete);
-  */
+  
   // Estados
   router.route('/estados').get(estadoCtrl.getAll);
   router.route('/estados/count').get(estadoCtrl.count);

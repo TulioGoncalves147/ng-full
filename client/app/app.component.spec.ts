@@ -45,12 +45,14 @@ describe('Component: App', () => {
     expect(de[1].nativeElement.textContent).toContain('Cats');
     expect(de[4].nativeElement.textContent).toContain('Paises');
     expect(de[5].nativeElement.textContent).toContain('Estados');
+    expect(de[6].nativeElement.textContent).toContain('Cidades');
     expect(de[2].nativeElement.textContent).toContain('Login');
     expect(de[3].nativeElement.textContent).toContain('Register');
     expect(de[0].attributes['routerLink']).toBe('/');
     expect(de[1].attributes['routerLink']).toBe('/cats');
     expect(de[4].attributes['routerLink']).toBe('/paises');
     expect(de[5].attributes['routerLink']).toBe('/estados');
+    expect(de[6].attributes['routerLink']).toBe('/cidades');
     expect(de[2].attributes['routerLink']).toBe('/login');
     expect(de[3].attributes['routerLink']).toBe('/register');
   });
@@ -64,12 +66,14 @@ describe('Component: App', () => {
     expect(de[1].nativeElement.textContent).toContain('Cats');
     expect(de[4].nativeElement.textContent).toContain('Paises');
     expect(de[5].nativeElement.textContent).toContain('Estados');
+    expect(de[6].nativeElement.textContent).toContain('Cidades');
     expect(de[2].nativeElement.textContent).toContain('Account (Tester)');
     expect(de[3].nativeElement.textContent).toContain('Logout');
     expect(de[0].attributes['routerLink']).toBe('/');
     expect(de[1].attributes['routerLink']).toBe('/cats');
     expect(de[4].attributes['routerLink']).toBe('/paises');
     expect(de[5].attributes['routerLink']).toBe('/estados');
+    expect(de[6].attributes['routerLink']).toBe('/cidades');
     expect(de[2].attributes['routerLink']).toBe('/account');
     expect(de[3].attributes['routerLink']).toBe('/logout');
   });
@@ -84,6 +88,7 @@ describe('Component: App', () => {
     expect(de[1].nativeElement.textContent).toContain('Cats');
     expect(de[4].nativeElement.textContent).toContain('Paises');
     expect(de[5].nativeElement.textContent).toContain('Estados');
+    expect(de[6].nativeElement.textContent).toContain('Cidades');
     expect(de[2].nativeElement.textContent).toContain('Account (Tester)');
     expect(de[3].nativeElement.textContent).toContain('Admin');
     expect(de[4].nativeElement.textContent).toContain('Logout');
@@ -91,6 +96,7 @@ describe('Component: App', () => {
     expect(de[1].attributes['routerLink']).toBe('/cats');
     expect(de[4].attributes['routerLink']).toBe('/paises');
     expect(de[5].attributes['routerLink']).toBe('/estados');
+    expect(de[6].attributes['routerLink']).toBe('/cidades');
     expect(de[2].attributes['routerLink']).toBe('/account');
     expect(de[3].attributes['routerLink']).toBe('/admin');
     expect(de[4].attributes['routerLink']).toBe('/logout');

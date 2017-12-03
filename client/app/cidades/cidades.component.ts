@@ -1,91 +1,89 @@
-/*
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-import { CatService } from '../services/cat.service';
+import { CidadeService } from '../services/cidade.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
-  selector: 'app-cats',
-  templateUrl: './cats.component.html',
-  styleUrls: ['./cats.component.scss']
+  selector: 'app-cidades',
+  templateUrl: './cidades.component.html',
+  styleUrls: ['./cidades.component.scss']
 })
-export class CatsComponent implements OnInit {
+export class CidadesComponent implements OnInit {
 
-  cat = {};
-  cats = [];
+  cidade = {};
+  cidades = [];
   isLoading = true;
   isEditing = false;
 
-  addCatForm: FormGroup;
+  addCidadeForm: FormGroup;
   name = new FormControl('', Validators.required);
-  age = new FormControl('', Validators.required);
-  weight = new FormControl('', Validators.required);
+  codIBGE = new FormControl('', Validators.required);
+  //weight = new FormControl('', Validators.required);
 
-  constructor(private catService: CatService,
+  constructor(private cidadeService: CidadeService,
               private formBuilder: FormBuilder,
               public toast: ToastComponent) { }
 
   ngOnInit() {
-    this.getCats();
-    this.addCatForm = this.formBuilder.group({
+    this.getCidades();
+    this.addCidadeForm = this.formBuilder.group({
       name: this.name,
-      age: this.age,
-      weight: this.weight
+      codIBGE: this.codIBGE
     });
   }
 
-  getCats() {
-    this.catService.getCats().subscribe(
-      data => this.cats = data,
+  getCidades() {
+    this.cidadeService.getCidades().subscribe(
+      data => this.cidades = data,
       error => console.log(error),
       () => this.isLoading = false
     );
   }
 
-  addCat() {
-    this.catService.addCat(this.addCatForm.value).subscribe(
+  addCidade() {
+    this.cidadeService.addCidade(this.addCidadeForm.value).subscribe(
       res => {
-        const newCat = res.json();
-        this.cats.push(newCat);
-        this.addCatForm.reset();
-        this.toast.setMessage('item added successfully.', 'success');
+        const newCidade = res.json();
+        this.cidades.push(newCidade);
+        this.addCidadeForm.reset();
+        this.toast.setMessage('item adicionado com sucesso.', 'success');
       },
       error => console.log(error)
     );
   }
 
-  enableEditing(cat) {
+  enableEditing(cidade) {
     this.isEditing = true;
-    this.cat = cat;
+    this.cidade = cidade;
   }
 
   cancelEditing() {
     this.isEditing = false;
-    this.cat = {};
-    this.toast.setMessage('item editing cancelled.', 'warning');
-    // reload the cats to reset the editing
-    this.getCats();
+    this.cidade = {};
+    this.toast.setMessage('edição de item cancelada.', 'warning');
+    // reload the cidades to reset the editing
+    this.getCidades();
   }
 
-  editCat(cat) {
-    this.catService.editCat(cat).subscribe(
+  editCidade(cidade) {
+    this.cidadeService.editCidade(cidade).subscribe(
       res => {
         this.isEditing = false;
-        this.cat = cat;
-        this.toast.setMessage('item edited successfully.', 'success');
+        this.cidade = cidade;
+        this.toast.setMessage('item editado com sucesso.', 'success');
       },
       error => console.log(error)
     );
   }
 
-  deleteCat(cat) {
-    if (window.confirm('Are you sure you want to permanently delete this item?')) {
-      this.catService.deleteCat(cat).subscribe(
+  deleteCidade(cidade) {
+    if (window.confirm('Tem certeza de que deseja excluir este item permanentemente?')) {
+      this.cidadeService.deleteCidade(cidade).subscribe(
         res => {
-          const pos = this.cats.map(elem => elem._id).indexOf(cat._id);
-          this.cats.splice(pos, 1);
-          this.toast.setMessage('item deleted successfully.', 'success');
+          const pos = this.cidades.map(elem => elem._id).indexOf(cidade._id);
+          this.cidades.splice(pos, 1);
+          this.toast.setMessage('item deletado com sucesso.', 'success');
         },
         error => console.log(error)
       );
@@ -93,4 +91,3 @@ export class CatsComponent implements OnInit {
   }
 
 }
-*/

@@ -5,6 +5,7 @@ import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
 import { PaisService } from './services/pais.service';
 import { EstadoService } from './services/estado.service';
+import { CidadeService } from './services/cidade.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { PaisesComponent } from './paises/paises.component';
 import { EstadosComponent } from './estados/estados.component';
+import { CidadesComponent } from './cidades/cidades.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -28,6 +30,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CatsComponent,
     PaisesComponent,
     EstadosComponent,
+    CidadesComponent,
     AboutComponent,
     RegisterComponent,
     LoginComponent,
@@ -47,6 +50,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     CatService,
     PaisService,
     EstadoService,
+    CidadeService,
     UserService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
