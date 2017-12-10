@@ -3,6 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
+
   <h4 class="card-header">Configurações de conta</h4>
   <div class="card-block">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
@@ -27,4 +28,5 @@
       </button>
     </form>
   </div>
+  
 </div>
