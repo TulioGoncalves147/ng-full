@@ -1,1 +1,0 @@
-{"version":3,"file":"pais.js","sourceRoot":"","sources":["../../../server/models/pais.ts"],"names":[],"mappings":";;AAAA,mCAAqC;AAErC,IAAM,UAAU,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IACrC,IAAI,EAAE,MAAM;IACZ,QAAQ,EAAE,MAAM;CACjB,CAAC,CAAC;AAEH,IAAM,IAAI,GAAG,QAAQ,CAAC,KAAK,CAAC,MAAM,EAAE,UAAU,CAAC,CAAC;AAEhD,kBAAe,IAAI,CAAC"}

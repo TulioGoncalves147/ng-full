@@ -1,1 +1,0 @@
-{"version":3,"file":"estado.js","sourceRoot":"","sources":["../../../server/models/estado.ts"],"names":[],"mappings":";;AAAA,mCAAqC;AAErC,IAAM,YAAY,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IACvC,IAAI,EAAE,MAAM;IACZ,EAAE,EAAE,MAAM;IACV,OAAO,EAAE,MAAM;CAChB,CAAC,CAAC;AAEH,IAAM,MAAM,GAAG,QAAQ,CAAC,KAAK,CAAC,QAAQ,EAAE,YAAY,CAAC,CAAC;AAEtD,kBAAe,MAAM,CAAC"}
