@@ -9,6 +9,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
   templateUrl: './cidades.component.html',
   styleUrls: ['./cidades.component.scss']
 })
+
 export class CidadesComponent implements OnInit {
 
   cidade = {};
@@ -89,5 +90,4 @@ export class CidadesComponent implements OnInit {
       );
     }
   }
-
 }
