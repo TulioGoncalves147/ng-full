@@ -5,7 +5,9 @@
 <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Clientes registrados ({{cats.length}})</h4>
   <div class="card-block">
+
     <table class="table table-bordered table-striped">
+
       <thead class="thead-default">
         <tr>
           <th>Nome</th>
@@ -14,11 +16,13 @@
           <th>Ações</th>
         </tr>
       </thead>
+
       <tbody *ngIf="cats.length === 0">
         <tr>
           <td colspan="4">Não há clientes no banco de dados. Adicione um novo cliente abaixo.</td>
         </tr>  
       </tbody>
+
       <tbody *ngIf="!isEditing">
         <tr *ngFor="let cat of cats">
           <td>{{cat.name}}</td>
@@ -30,6 +34,7 @@
           </td>
         </tr>  
       </tbody>
+
       <tbody *ngIf="isEditing">
         <tr>
           <td colspan="4">
@@ -49,7 +54,9 @@
           </td>
         </tr>
       </tbody>
+
     </table>
+    
   </div>
 </div>
 
