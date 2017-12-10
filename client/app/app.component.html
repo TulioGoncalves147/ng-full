@@ -1,24 +1,31 @@
 <div class="container">
+
   <nav class="navbar navbar-light bg-success justify-content-between">
     <div class="nav navbar-nav">
+
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <i class="fa fa-home"></i> Home
       </a>
+
       <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
         <i class="fa fa-user-plus"></i> Registrar
       </a>
+
       <a routerLink="/paises" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-globe"></i> Paises
       </a>
+
       <a routerLink="/estados" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-globe"></i> Estados
       </a>
       <a routerLink="/cidades" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-globe"></i> Cidades
       </a>
+
       <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-vcard"></i> Clientes
       </a>
+      
       <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
         <i class="fa fa-sign-in"></i> Login
       </a>
@@ -31,14 +38,16 @@
         <div class="dropdown-menu dropdown-menu-right">
 
           <a routerLink="/account" class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn"><i class="fa fa-cog"></i> Configuração da conta</a>
-          <a routerLink="/admin" class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin" ><i class="fa fa-users"></i> Contas cadastradas(adm)</a>          
+
+          <a routerLink="/admin" class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin" ><i class="fa fa-users"></i> Contas cadastradas(adm)</a>
+
           <a routerLink="/register" class="dropdown-item" routerLinkActive="active"><i class="fa fa-user-plus"></i> Cadastrar usuário</a>
+
           <a routerLink="/logout"  class="dropdown-item" routerLinkActive="active" *ngIf="auth.loggedIn"><i class="fa fa-sign-out"></i> Logout</a>
 
         </div>
 
       </div>
-
     </div>
   </nav>
   
