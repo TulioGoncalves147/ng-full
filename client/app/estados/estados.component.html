@@ -6,6 +6,7 @@
   <h4 class="card-header">Estados Cadastrados ({{estados.length}})</h4>
   <div class="card-block">
     <table class="table table-bordered table-striped">
+
       <thead class="thead-default">
         <tr>
           <th>Nome</th>
@@ -14,11 +15,13 @@
           <th>Ações</th>
         </tr>
       </thead>
+
       <tbody *ngIf="estados.length === 0">
         <tr>
           <td colspan="4">Não há estados no banco de dados. Adicione um novo estado abaixo.</td>
         </tr>  
       </tbody>
+
       <tbody *ngIf="!isEditing">
         <tr *ngFor="let estado of estados">
           <td>{{estado.name}}</td>
@@ -30,6 +33,7 @@
           </td>
         </tr>  
       </tbody>
+
       <tbody *ngIf="isEditing">
         <tr>
           <td colspan="4">
@@ -49,6 +53,7 @@
           </td>
         </tr>
       </tbody>
+      
     </table>
   </div>
 </div>
