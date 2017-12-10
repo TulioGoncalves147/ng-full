@@ -2,6 +2,7 @@ import * as chai from 'chai';
 import * as chaiHttp from 'chai-http';
 
 process.env.NODE_ENV = 'test';
+
 import { app } from '../app';
 import Estado from '../models/estado';
 
@@ -98,5 +99,3 @@ describe('Estados', () => {
   });
 
 });
-
-
