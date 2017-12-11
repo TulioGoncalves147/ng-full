@@ -40,13 +40,13 @@
           <td colspan="4">
             <form class="form-inline" #form="ngForm" (ngSubmit)="editCat(cat)" style="display:inline">
               <div class="form-group">
-                <input class="form-control" type="text" name="name" [(ngModel)]="cat.name" placeholder="Name" required>
+                <input class="form-control" type="text" name="name" [(ngModel)]="cat.name" placeholder="Nome" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="number" name="age" [(ngModel)]="cat.age" placeholder="Age" min="0" required>
+                <input class="form-control" type="number" name="age" [(ngModel)]="cat.age" placeholder="Idade" min="0" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="number" name="weight" [(ngModel)]="cat.weight" placeholder="Weight" step="any" min="0" required>
+                <input class="form-control" type="number" name="weight" [(ngModel)]="cat.weight" placeholder="Peso" step="any" min="0" required>
               </div>
               <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Salvar</button>
             </form>
